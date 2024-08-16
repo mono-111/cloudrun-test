@@ -1,0 +1,20 @@
+FROM python:3.12-slim-bookworm
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /
+
+RUN apt update
+RUN apt install -y build-essential
+# RUN pip install --upgrade setuptools
+# RUN python -m ensurepip --upgrade
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY app.py .
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "app.py"]
