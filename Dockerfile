@@ -13,6 +13,6 @@ RUN pip install -r requirements.txt
 
 COPY app.py .
 
-EXPOSE 8501
+EXPOSE 8080
 
-CMD ["streamlit", "run", "app.py", "--browser.gatherUsageStats", "false", "--server.headless", "true", "--server.fileWatcherType", "none"]
+CMD ["streamlit", "run", "app.py", "--browser.gatherUsageStats", "false", "--server.headless", "true", "--server.fileWatcherType", "none", "--server.port", "8080"]
