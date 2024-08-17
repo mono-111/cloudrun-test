@@ -22,7 +22,7 @@ To run the Streamlit application, you have two options:
      ```  
    - Once the image is built, run the following command to start a container:  
      ```  
-     podman run -p=8501:8501 streamlit-app streamlit run app.py --browser.gatherUsageStats false --server.headless true --server.fileWatcherType none
+     podman run -p=8501:8501 streamlit-app 
      ```  
    - Open your browser and navigate to `http://localhost:8501` to access the application.  
    
